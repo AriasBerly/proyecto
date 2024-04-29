@@ -22,6 +22,11 @@ const router = createRouter({
       name: 'register',
       component: () => import('../views/RegisterView.vue')
     },
+    {
+      path: '/seg-tramite',
+      name: 'seg-tramite',
+      component: () => import('../views/titulacion/SegTramiteView.vue')
+    },
 
     {
       path: '/admin',
