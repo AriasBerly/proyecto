@@ -139,16 +139,9 @@ router.push({ name: "admin-list-contabilidad" });
                 <VBtn  
                 color="secondary"
                 @click="submit"
-                >Buscar</VBtn>
+                >Buscar
+              </VBtn>
                 
-                <VBtn
-                  color="red"
-                  variant="outlined"
-                  type="reset"
-                  @click.prevent=""
-                >
-                  Borrar  
-                </VBtn>
               </v-col>
             </v-row>
           </VForm>
@@ -178,81 +171,69 @@ router.push({ name: "admin-list-contabilidad" });
             <v-row>
               <!-- Documento de identidad -->
               <v-col
-                md="6"
+                md="3"
                 cols="12"
+                class="col-etiqueta"
               >
-              <v-text>C.I. N°
-                <v-text-field
-                v-model="nroCarnet.value.value"
-                variant="outlined"
-                persistent-hint
-                ></v-text-field>
-            </v-text>
+              <v-row>
+              <v-text class="text-etiqueta">Codigo de empaste</v-text>
+            
+                    <v-text-field 
+                    class="field-etiqueta"
+                    v-model="nroCarnet.value.value"
+                    variant="outlined"
+                    persistent-hint
+                    ></v-text-field>
+            
+              </v-row>
               </v-col>
               <!-- Documento de identidad -->
               <v-col
-                md="3"
-                cols="6"
+              class="col-etiqueta"
+              md="3"
+              cols="12"
               >
-              <v-text>C.I. N°
-                <v-text-field
+              <v-row>
+              <v-text class="text-etiqueta">Nombre completo</v-text>
+              
+                <v-text-field class="field-etiqueta"
                 v-model="nroCarnet.value.value"
             
                 variant="outlined"
                 persistent-hint
                 ></v-text-field>
-            </v-text>
+            
+          </v-row>
               </v-col>
             <!-- Documento de identidad -->
             <v-col
+             class="col-etiqueta"
                 md="3"
                 cols="12"
               >
-              <v-text>C.I. N°
+              <v-row>
+              <v-text
+              class="text-etiqueta"
+              >C.I. N°</v-text>
+          
                 <v-text-field
+                class="field-etiqueta"
                 v-model="nroCarnet.value.value"
                 variant="outlined"
                 persistent-hint
                 ></v-text-field>
-            </v-text>
+           
+          </v-row>
               </v-col>
               <!-- Fecha -->
-              <v-col
-                md="3"
-                cols="12"
-              >
-              <v-text>Fecha de nacimiento</v-text>
-              <VueDatePicker
-              v-model="fechaFin"
-              locale="es"
-              :teleport="true"
-              :enable-time-picker="false"
-              placeholder="Fecha de fin"
-              :year-range="[2021, 2060]"
-              :cancel-text="textoCancelar"
-              :select-text="textoSeleccionar"
-            >
-            </VueDatePicker>
-              </v-col>
+             
 
               <!-- Acciones del Formulario -->
               <v-col
                 cols="12"
                 class="d-flex flex-wrap  justify-center gap-4"
               >
-                <VBtn  
-                color="secondary"
-                @click="submit"
-                >Buscar</VBtn>
-                
-                <VBtn
-                  color="red"
-                  variant="outlined"
-                  type="reset"
-                  @click.prevent=""
-                >
-                  Borrar  
-                </VBtn>
+               
               </v-col>
             </v-row>
           </VForm>
@@ -268,5 +249,20 @@ router.push({ name: "admin-list-contabilidad" });
   border-right: solid;
   border-width: solid;
   color: #cdcdcd;
+}
+.text-etiqueta
+{
+  padding: 2%;
+
+}
+.field-etiqueta
+{
+  padding: 1;
+
+}
+.col-etiqueta
+{
+  padding-right: 5%;
+
 }
 </style>
