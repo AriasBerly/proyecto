@@ -100,11 +100,12 @@ router.push({ name: "admin-list-contabilidad" });
             <v-row>
               <!-- Documento de identidad -->
               <v-col
-                md="6"
-                cols="12"
+              cols="12"
+                md="6"                
               >
               <v-text>C.I. N°</v-text>
                 <v-text-field
+                class="text-field-search"
                 v-model="nroCarnet.value.value"
                 label="Documento de identidad"
                 variant="outlined"
@@ -112,13 +113,14 @@ router.push({ name: "admin-list-contabilidad" });
                 ></v-text-field>
               </v-col>
 
-              <!-- Fecha -->
+              <!-- Fecha nacimiento -->
               <v-col
+              cols="12"
                 md="6"
-                cols="12"
               >
               <v-text>Fecha de nacimiento</v-text>
               <VueDatePicker
+              class="flex-grow-1"
               v-model="fechaFin"
               locale="es"
               :teleport="true"
@@ -171,7 +173,7 @@ router.push({ name: "admin-list-contabilidad" });
             <v-row>
               <!-- Documento de identidad -->
               <v-col
-                md="3"
+                md="4"
                 cols="12"
                 class="col-etiqueta"
               >
@@ -190,7 +192,7 @@ router.push({ name: "admin-list-contabilidad" });
               <!-- Documento de identidad -->
               <v-col
               class="col-etiqueta"
-              md="3"
+              md="5"
               cols="12"
               >
               <v-row>
@@ -236,6 +238,112 @@ router.push({ name: "admin-list-contabilidad" });
                
               </v-col>
             </v-row>
+            <v-row>
+              <!-- Documento de identidad -->
+              <v-col
+                md="4"
+                cols="12"
+                class="col-etiqueta"
+              >
+              <v-row>
+              <v-text class="text-etiqueta">Programa</v-text>
+            
+                    <v-text-field 
+                    class="field-etiqueta"
+                    v-model="nroCarnet.value.value"
+                    variant="outlined"
+                    persistent-hint
+                    ></v-text-field>
+            
+              </v-row>
+              </v-col>
+              <!-- Documento de identidad -->
+              <v-col
+              class="col-etiqueta"
+              md="4"
+              cols="12"
+              >
+              <v-row>
+              <v-text class="text-etiqueta">Sede</v-text>
+              
+                <v-text-field class="field-etiqueta"
+                v-model="nroCarnet.value.value"
+            
+                variant="outlined"
+                persistent-hint
+                ></v-text-field>
+            
+          </v-row>
+              </v-col>
+            <!-- Documento de identidad -->
+            <v-col
+             class="col-etiqueta"
+                md="4"
+                cols="12"
+              >
+              <v-row>
+              <v-text
+              class="text-etiqueta"
+              >Inicio de trámite</v-text>
+          
+                <v-text-field
+                class="field-etiqueta"
+                v-model="nroCarnet.value.value"
+                variant="outlined"
+                persistent-hint
+                ></v-text-field>
+           
+          </v-row>
+              </v-col>
+              <!-- Fecha -->
+             
+
+              <!-- Acciones del Formulario -->
+              <v-col
+                cols="12"
+                class="d-flex flex-wrap  justify-center gap-4"
+              >
+               
+              </v-col>
+            </v-row>
+            <v-row>
+              <!-- Documento de identidad -->
+              <v-col
+                md="4"
+                cols="12"
+                class="col-etiqueta"
+              >
+              <v-row>
+              <v-text class="text-etiqueta">Estado</v-text>
+            
+                    <v-text-field 
+                    class="field-etiqueta"
+                    v-model="nroCarnet.value.value"
+                    variant="outlined"
+                    persistent-hint
+                    ></v-text-field>
+            
+              </v-row>
+              </v-col>
+              <!-- Documento de identidad -->
+              <v-col
+              class="col-etiqueta"
+              md="4"
+              cols="12"
+              >
+              <v-row>
+              <v-text class="text-etiqueta">Etapa del trámite</v-text>
+              
+                <v-text-field class="field-etiqueta"
+                v-model="nroCarnet.value.value"
+            
+                variant="outlined"
+                persistent-hint
+                ></v-text-field>
+            
+          </v-row>
+              </v-col>
+            </v-row>
           </VForm>
         </v-card-title>
       </v-card>
@@ -244,7 +352,11 @@ router.push({ name: "admin-list-contabilidad" });
 </v-card>
 </template>
 
-<style>
+<style scoped>
+.text-field-search{
+  height: 56px;
+  width: 100%;
+}
 .card {
   border-right: solid;
   border-width: solid;
@@ -262,7 +374,7 @@ router.push({ name: "admin-list-contabilidad" });
 }
 .col-etiqueta
 {
-  padding-right: 5%;
+  padding-right: 3%;
 
 }
 </style>
