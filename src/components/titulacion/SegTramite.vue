@@ -75,28 +75,40 @@ const submit = handleSubmit(async (values) => {
 });
 </script>
     <script>
-  export default {
-    data () {
-      return {
-        tickLabels: {
-          0: 'Figs',
-          1: 'Lemon',
-          2: 'Pear',
-          3: 'Apple',
-          4: 'Figs',
-          5: 'Lemon',
-          6: 'Pear',
-          7: 'Apple',
+export default {
+  data() {
+    return {
+      tickLabels: {
+          0: 'Etapa 1',
+          1: 'Etapa 2',
+          2: 'Etapa 3',
+          3: 'Etapa 4',
+          4: 'Etapa 5',
+          5: 'Etapa 6',
+
         },
-      
-      }
-      
-    },
+
+        /*   0: 'Entrega de monografia',
+          1: 'revisión de monografia',
+          2: 'Presentación de documentacion',
+          3: 'Entrega final',
+          4: 'En tramite',
+          5: 'Titulo listo?',*/
+
+      showDetails: false,
+      progress: 25
+    };
+  },
+  methods: {
+    toggleDetails() {
+      this.showDetails = !this.showDetails;
+    }
   }
+};
 </script>
 
 <template>
-  <v-card max-width="1100" flat class="mx-auto my-10" elevation="3">
+  <v-card max-width="1200" flat class="mx-auto my-10" elevation="3">
     <v-card-title class="text-h4 font-weight-bold" tag="h3">
       Tramites
     </v-card-title>
@@ -155,7 +167,7 @@ const submit = handleSubmit(async (values) => {
       </v-col>
     </v-row>
   </v-card>
-  <v-card max-width="1100" flat class="mx-auto my-10" elevation="3">
+  <v-card max-width="1200" flat class="mx-auto my-10" elevation="3">
     <v-card-title class="text-h4 font-weight-bold" tag="h3"> </v-card-title>
 
     <v-card-subtitle class="text-h5 py-5">
@@ -287,9 +299,19 @@ const submit = handleSubmit(async (values) => {
                 </v-col>
               </v-row>
               <v-row>
-                <div class="text-caption">Tick labels</div>
+                <v-col>
+                  <v-card>
+                    <v-btn color="green" @click="toggleDetails">{{
+                      showDetails ? "Ocultar Detalle" : "Ver Más Detalle"
+                    }}</v-btn>
+
+                    <div v-if="showDetails">
+                      <h2>Proceso externo de titulación</h2>
+                      <div class="text-caption">Etapas</div>
                 <v-slider
-                  :max="7"
+                disabled
+                v-model="progress"
+                  :max="5"
                   :ticks="tickLabels"
                   show-ticks="always"
                   step="1"
@@ -297,7 +319,10 @@ const submit = handleSubmit(async (values) => {
                   color="orange"
                 >
               </v-slider>
-            </v-row>
+                    </div>
+                  </v-card>
+                </v-col>
+              </v-row>
             </VForm>
           </v-card-title>
         </v-card>
