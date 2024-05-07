@@ -4,6 +4,7 @@ import { useFirebaseAuth } from 'vuefire'
 import HomeView from '../views/HomeView.vue'
 
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -27,6 +28,14 @@ const router = createRouter({
       name: 'seg-tramite',
       component: () => import('../views/titulacion/SegTramiteView.vue')
     },
+
+
+    {
+      path: '/seg',
+      name: 'seg',
+      component: () => import('../views/Contabilidad.vue')
+    },
+
 
     {
       path: '/admin',
